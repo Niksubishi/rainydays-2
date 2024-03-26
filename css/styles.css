@@ -177,9 +177,7 @@
     width: 20%;
     margin-top: 2%;
     box-sizing: border-box;
-    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; 
     background-color: #000000;
   }
   
@@ -189,7 +187,6 @@
   
   .jacketpicbox2 img {
     width: 100%;
-    border-radius: 8px;
   }
   
   .jackettextbox2 {
