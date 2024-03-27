@@ -223,14 +223,12 @@
   }
 
   .button-container {
-    position: relative;
-    bottom: 0;
     width: 100%;
     text-align: center;
   }
   
   .button-container button {
-    margin-top: 10px;
+    width: 80%;
   }
 
   @media (max-width: 1000px) {
