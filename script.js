@@ -74,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h4>${product.title}</h4>
                         <p>${product.description || 'Description not available'}</p>
                         <p>$${product.price}</p>
+                    </div>
+                    <div class="button-container">
                         <button class="add-to-basket" data-id="${product.id}" data-name="${product.title}" data-price="${product.price}" data-image="${product.image?.url}" data-description="${product.description}">Add to Cart</button>
                     </div>
                 `;
