@@ -167,15 +167,14 @@
   justify-content: center;
   margin-top: 2%;
   margin-bottom: 2%;
-  gap: 2%;
   }
 
   .jacketbox2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 21%;
-    margin-top: 2%;
+    width: 20%;
+    margin: 1%;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #000000;
@@ -206,10 +205,12 @@
 
   .jackettextbox2 h4 {
     margin-bottom: 10px;
+    font-size: 0.8em;
   }
   
   .jackettextbox2 p {
     margin-top: 10px;
+    font-size: 0.8em;
   }
   
   .jackettextbox2 h4,
