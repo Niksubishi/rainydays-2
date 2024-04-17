@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   document.addEventListener("click", async function (event) {
     if (event.target.classList.contains("add-to-basket")) {
-      event.stopPropagation();
       const productId = event.target.getAttribute("data-id");
       const productName = event.target.getAttribute("data-name");
       const productPrice = event.target.getAttribute("data-price");
@@ -49,7 +48,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       localStorage.setItem("basketItems", JSON.stringify(basketItems));
     } else if (event.target.classList.contains("remove-from-basket")) {
-      event.stopPropagation();
       const productId = event.target.getAttribute("data-id");
 
       let basketItems = JSON.parse(localStorage.getItem("basketItems")) || [];
