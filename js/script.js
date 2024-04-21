@@ -28,6 +28,54 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
   }
 
+  async function fetchAndDisplayProducts(genderFilter) {
+    try {
+      const response = await fetch("https://v2.api.noroff.dev/rainy-days");
+      const data = await response.json();
+      const productList = document.getElementById("product-listing");
+      productList.innerHTML = "";
+
+      data.data.forEach((product) => {
+        if (genderFilter === "all" || product.gender === genderFilter) {
+          const productElement = document.createElement("div");
+          productElement.classList.add("jacketbox2");
+          productElement.innerHTML = `
+            <div class="jacketpicbox2">
+              <a href="jacket1.html"><img src="${product.image?.url}" alt="${
+            product.name
+          }"></a>
+            </div>
+            <div class="jackettextbox2">
+              <h4>${product.title}</h4>
+              <p>${product.description || "Description not available"}</p>
+              <p>$${product.price}</p>
+            </div>
+            <div class="button-container">
+              <button class="add-to-basket" data-id="${
+                product.id
+              }" data-name="${product.title}" data-price="${
+            product.price
+          }" data-image="${product.image?.url}" data-description="${
+            product.description
+          }">Add to Cart</button>
+            </div>
+          `;
+          productList.appendChild(productElement);
+        }
+      });
+    } catch (error) {
+      console.error("Error fetching product data:", error);
+    }
+
+    updateBasketView();
+  }
+
+  const genderDropdown = document.getElementById("gender-filter");
+  genderDropdown.addEventListener("change", function () {
+    const selectedGender = genderDropdown.value;
+    fetchAndDisplayProducts(selectedGender);
+  });
+
   document.addEventListener("click", async function (event) {
     if (event.target.classList.contains("add-to-basket")) {
       const productId = event.target.getAttribute("data-id");
@@ -60,37 +108,5 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
 
-  try {
-    const response = await fetch("https://v2.api.noroff.dev/rainy-days");
-    const data = await response.json();
-    const productList = document.getElementById("product-listing");
-    data.data.forEach((product) => {
-      const productElement = document.createElement("div");
-      productElement.classList.add("jacketbox2");
-      productElement.innerHTML = `
-          <div class="jacketpicbox2">
-            <a href="jacket1.html"><img src="${product.image?.url}" alt="${
-        product.name
-      }"></a>
-          </div>
-          <div class="jackettextbox2">
-            <h4>${product.title}</h4>
-            <p>${product.description || "Description not available"}</p>
-            <p>$${product.price}</p>
-          </div>
-          <div class="button-container">
-            <button class="add-to-basket" data-id="${product.id}" data-name="${
-        product.title
-      }" data-price="${product.price}" data-image="${
-        product.image?.url
-      }" data-description="${product.description}">Add to Cart</button>
-          </div>
-        `;
-      productList.appendChild(productElement);
-    });
-  } catch (error) {
-    console.error("Error fetching product data:", error);
-  }
-
-  updateBasketView();
+  fetchAndDisplayProducts("all");
 });

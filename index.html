@@ -58,12 +58,13 @@
 
     <!-- Main Content -->
 
-    <main>
-      <div class="video-row1">
-        <video autoplay loop muted playsinline>
-          <source src="images/videos/rainydayshomepage.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div class="gender-dropdown">
+        <label for="gender-filter">Filter by Gender:</label>
+        <select id="gender-filter">
+          <option value="all">All</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
       </div>
 
       <div id="product-listing"></div>
