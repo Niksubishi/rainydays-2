@@ -11,10 +11,6 @@
     <script type="module" src="../../js/script.mjs"></script>
   </head>
   <body>
-    <div class="black-bar">
-      <p>EXTENDED RETURN UNTIL JUNE 17TH</p>
-    </div>
-
     <header>
       <img
         src="../../images/logos/headerlogo.png"
@@ -26,7 +22,7 @@
         <a href="../shop.html">Shop</a>
         <a href="../aboutus.html">About Us</a>
         <a href="../contact.html">Contact</a>
-        <a href="index.html"
+        <a href="../checkout/index.html"
           ><img src="../../images/icons/cart.svg" alt="Icon of cart symbol"
         /></a>
       </nav>
@@ -37,12 +33,12 @@
         <a href="../../index.html"
           ><img
             src="../../images/icons/homeicon.png"
-            alt="Icon of a house shap"
+            alt="Icon of a house shape"
         /></a>
         <a href="../../shop.html"
           ><img
             src="../../images/icons/shopicon.png"
-            alt="Icon of a tshirt shape for the shop"
+            alt="Icon of a t-shirt shape for the shop"
         /></a>
         <a href="../../aboutus.html"
           ><img
@@ -52,25 +48,23 @@
         <a href="../../contact.html"
           ><img
             src="../../images/icons/contacticon.png"
-            alt="Icon of an envelope symbole for contact"
+            alt="Icon of an envelope symbol for contact"
         /></a>
-        <a href="index.html"
+        <a href="../checkout/index.html"
           ><img src="../../images/icons/carticon.png" alt="Icon of cart symbol"
         /></a>
       </div>
     </div>
 
-    <!-- Main Content -->
-
-    <h1>Shopping Basket</h1>
-    <div id="basket-items"></div>
-
-    <div id="order-summary">
-      <h2>Order Summary</h2>
-      <div id="subtotal">Subtotal: $0</div>
-      <div id="delivery">Delivery: Free</div>
-      <div id="total">Total: $0</div>
-    </div>
+    <main>
+      <div class="product-details">
+        <img id="product-image" src="" alt="" />
+        <h1 id="product-name"></h1>
+        <p id="product-description"></p>
+        <p id="product-price"></p>
+        <button id="add-to-cart">Add to Cart</button>
+      </div>
+    </main>
 
     <footer>
       <div class="top-row">
@@ -90,7 +84,7 @@
             <img
               class="social-icon"
               src="../../images/icons/insta.svg"
-              alt="Instagram logo a camera-looking symbol"
+              alt="Instagram logo, a camera-looking symbol"
             />
             <img
               class="social-icon"
@@ -100,12 +94,12 @@
             <img
               class="social-icon"
               src="../../images/icons/youtube.svg"
-              alt="YouTube logo a square with a play symbol"
+              alt="YouTube logo, a square with a play symbol"
             />
             <img
               class="social-icon"
               src="../../images/icons/x.svg"
-              alt="X logo a square with a stylized X inside"
+              alt="X logo, a square with a stylized X inside"
             />
           </div>
         </div>
@@ -118,7 +112,7 @@
         <div class="payment-icons">
           <img
             src="../../images/icons/payments.png"
-            alt="logos for popular payment companies such as visa"
+            alt="Logos for popular payment companies such as Visa"
           />
         </div>
       </div>
