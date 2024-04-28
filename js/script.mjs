@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       basketItem.innerHTML = `
           <div class="jacketpicbox2">
-            <a href="product-details.html?id=${item.id}"><img src="${
+            <a href="../products/product.html?id=${item.id}"><img src="${
         item.image
       }" alt="${item.name}"></a>
           </div>
@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     calculateOrderSummary(basketItems);
   }
+
+  //ORDER PRICE JS
 
   async function calculateOrderSummary(basketItems) {
     const subtotal = basketItems.reduce(
@@ -103,6 +105,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       updateBasketView();
     }
   });
+
+  //API FETCH JS
 
   try {
     const response = await fetch(API_PRODUCTS_URL);
