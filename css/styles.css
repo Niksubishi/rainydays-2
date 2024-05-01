@@ -171,22 +171,6 @@ body {
   margin-bottom: 2%;
 }
 
-.add-to-basket {
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
-  border-radius: 10px;
-  padding: 5px 15px;
-  margin-bottom: 2%;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.add-to-basket:hover {
-  background-color: #0056b3;
-}
-
 .jacketbox2 {
   display: flex;
   flex-direction: column;
@@ -245,6 +229,22 @@ body {
 
 .button-container button {
   width: 60%;
+}
+
+.add-to-basket {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin-bottom: 2%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-basket:hover {
+  background-color: #0056b3;
 }
 
 .gender-dropdown {

@@ -21,10 +21,12 @@ document.addEventListener("DOMContentLoaded", async function () {
             <h4>${item.name}</h4>
             <p>${item.description || "Description not available"}</p>
             <p>$${item.price}</p>
+          </div>
+          <div class="button-container">
             <button class="remove-from-basket" data-id="${
               item.id
             }">Remove</button>
-          </div>
+            </div>
         `;
       basketItemsContainer.appendChild(basketItem);
     });
