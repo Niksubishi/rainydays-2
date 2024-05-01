@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       <div id="subtotal">Subtotal: $${subtotal.toFixed(2)}</div>
       <div id="delivery">Delivery: Free</div>
       <div id="total">Total: $${total.toFixed(2)}</div>
+      <a id="checkout-button" href="checkoutsuccess/checkoutsuccess.html">Pay</a>
     `;
   }
 

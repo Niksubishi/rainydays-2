@@ -1,0 +1,278 @@
+.black-bar {
+  background-color: #272727;
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.black-bar p {
+  color: #ffffff;
+  margin: 0;
+  font-size: 0.6em;
+  font-family: "Lato-Light", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .black-bar p {
+    font-size: 0.6em;
+  }
+}
+
+/*HEADER*/
+
+header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+}
+
+.header-logo {
+  display: flex;
+  width: 10%;
+  min-width: 150px;
+  max-width: 250px;
+  margin-left: 61px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+header nav {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: "Lato-Light", sans-serif;
+  font-size: 0.8em;
+}
+
+header nav a {
+  display: flex;
+  width: auto;
+  height: auto;
+  margin-left: 8%;
+  margin-right: 6%;
+  text-align: center;
+  line-height: 24px;
+  background-color: #000000;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.mobilenavcontainer {
+  display: none;
+  justify-content: center;
+  background-color: #cbcbcb;
+  position: sticky;
+  top: 0;
+}
+
+.mobilenavcontainer div {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.mobilenavcontainer div a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mobilenavcontainer div a img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+@media (max-width: 1000px) {
+  .mobilenavcontainer {
+    display: flex;
+  }
+}
+
+@media (max-width: 1000px) {
+  header nav {
+    display: none;
+  }
+
+  header {
+    position: relative;
+    flex-direction: column;
+  }
+
+  .header-logo {
+    align-items: center;
+    margin-left: 0;
+  }
+}
+
+/*FOOTER*/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #cbcbcb;
+  height: 400px;
+}
+
+.top-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 50%;
+}
+
+.footerlogocontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.footerlogocontainer img {
+  width: 100%;
+  max-width: 325px;
+  min-width: 200px;
+  margin-right: 7%;
+}
+
+.separator {
+  border-left: 1px solid #ffffff;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-row p {
+  font-size: 2em;
+  width: 20%;
+  margin-top: 4%;
+  margin-left: 17%;
+  margin-right: 13%;
+}
+
+.bottom-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1%;
+}
+
+.address-container {
+  text-align: center;
+}
+
+.socialiconscontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-left: 2%;
+}
+
+.social-icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
+}
+
+.bottom-row p {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin-right: 2%;
+}
+
+.payment-icons img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.bottomlinks {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 4%;
+  margin-bottom: 1%;
+  width: 100%;
+}
+
+.bottomlinks a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.6em;
+}
+
+@media screen and (max-width: 900px) {
+  .top-row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 35%;
+    margin: 0;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .footerlogocontainer img {
+    margin: 0;
+  }
+
+  .top-row p {
+    display: none;
+  }
+
+  .bottom-row {
+    margin-top: 0%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons {
+    order: 1;
+    width: 100%;
+    margin-bottom: 8%;
+  }
+
+  .socialiconscontainer {
+    margin: 0;
+  }
+
+  .payment-icons {
+    display: none;
+  }
+
+  .bottom-row p {
+    order: 2;
+    font-size: 0.7em;
+  }
+
+  .bottomlinks {
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8em;
+  }
+}

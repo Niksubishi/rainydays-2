@@ -1,0 +1,38 @@
+.checkoutsuccesscontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkoutsuccesscontainer img {
+  width: 12%;
+  margin-top: 7%;
+  min-width: 100px;
+  max-width: 300px;
+}
+
+.checkoutsuccesscontainer h1 {
+  margin-top: 4%;
+  width: 50%;
+  text-align: center;
+}
+
+.checkoutsuccesscontainer p {
+  margin-top: 3%;
+  width: 50%;
+}
+
+.checkoutsuccesscontainer a {
+  margin-bottom: 5%;
+}
+
+@media (max-width: 900px) {
+  .checkoutsuccesscontainer h1 {
+    font-size: 0.8em;
+  }
+
+  .checkoutsuccesscontainer p {
+    font-size: 0.8em;
+  }
+}
