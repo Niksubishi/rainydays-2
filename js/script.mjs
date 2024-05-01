@@ -109,6 +109,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   //API FETCH JS
 
   try {
+    const spinnerContainer = document.getElementById("spinner-container");
+    spinnerContainer.style.display = "block";
+
     const response = await fetch(API_PRODUCTS_URL);
     const data = await response.json();
     const productList = document.getElementById("product-listing");
@@ -127,26 +130,26 @@ document.addEventListener("DOMContentLoaded", async function () {
         const productElement = document.createElement("div");
         productElement.classList.add("jacketbox2");
         productElement.innerHTML = `
-            <div class="jacketpicbox2">
-            <a href="pages/products/product.html?id=${product.id}"><img src="${
-          product.image?.url
-        }" alt="${product.name}"></a>
-            </div>
-            <div class="jackettextbox2">
-              <h4>${product.title}</h4>
-              <p>${product.description || "Description not available"}</p>
-              <p>$${product.price}</p>
-            </div>
-            <div class="button-container">
-              <button class="add-to-basket" data-id="${
+              <div class="jacketpicbox2">
+              <a href="pages/products/product.html?id=${
                 product.id
-              }" data-name="${product.title}" data-price="${
+              }"><img src="${product.image?.url}" alt="${product.name}"></a>
+              </div>
+              <div class="jackettextbox2">
+                <h4>${product.title}</h4>
+                <p>${product.description || "Description not available"}</p>
+                <p>$${product.price}</p>
+              </div>
+              <div class="button-container">
+                <button class="add-to-basket" data-id="${
+                  product.id
+                }" data-name="${product.title}" data-price="${
           product.price
         }" data-image="${product.image?.url}" data-description="${
           product.description
         }">Add to Cart</button>
-            </div>
-          `;
+              </div>
+            `;
         productList.appendChild(productElement);
       });
     };
@@ -162,6 +165,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       );
       renderProducts(filteredProducts);
     });
+
+    spinnerContainer.style.display = "none";
   } catch (error) {
     console.error("Error fetching product data:", error);
   }
