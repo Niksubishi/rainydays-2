@@ -91,6 +91,17 @@ header nav a {
   max-height: 40px;
 }
 
+#cart-counter,
+#mobile-cart-counter {
+  display: inline-block;
+  background-color: #ff0000; /* Red background color */
+  color: #ffffff; /* White text color */
+  padding: 5px 10px; /* Padding around the text */
+  border-radius: 50%; /* Rounded shape */
+  font-size: 14px; /* Font size */
+  font-weight: bold; /* Bold text */
+}
+
 @media (max-width: 1000px) {
   .mobilenavcontainer {
     display: flex;

@@ -57,6 +57,14 @@ body {
   z-index: 9999;
 }
 
+#spinner-container2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
 .dot-spinner {
   --uib-size: 2.8rem;
   --uib-speed: 0.9s;
