@@ -12,26 +12,29 @@ document.addEventListener("DOMContentLoaded", async function () {
       basketItem.classList.add("jacketbox2");
 
       basketItem.innerHTML = `
-  <div class="jacketpicbox2">
-    <a href="../products/product.html?id=${item.id}"><img src="${
+          <div class="jacketpicbox2">
+            <a href="../products/product.html?id=${item.id}"><img src="${
         item.image
       }" alt="${item.name}"></a>
-  </div>
-  <div class="jackettextbox2">
-    <h4>${item.name}</h4>
-    <p>${item.description || "Description not available"}</p>
-    <p>Size: ${item.size}</p> <!-- Add size here -->
-    <p>$${item.price}</p>
-  </div>
-  <div class="button-container">
-    <button class="remove-from-basket" data-id="${item.id}">Remove</button>
-  </div>
-`;
+          </div>
+          <div class="jackettextbox2">
+            <h4>${item.name}</h4>
+            <p>${item.description || "Description not available"}</p>
+            <p>$${item.price}</p>
+          </div>
+          <div class="button-container">
+            <button class="remove-from-basket" data-id="${
+              item.id
+            }">Remove</button>
+            </div>
+        `;
       basketItemsContainer.appendChild(basketItem);
     });
 
     calculateOrderSummary(basketItems);
   }
+
+  //ORDER PRICE JS
 
   async function calculateOrderSummary(basketItems) {
     const subtotal = basketItems.reduce(
@@ -60,7 +63,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       price: product.price,
       image: product.image?.url,
       description: product.description,
-      size: product.size,
     });
 
     localStorage.setItem("basketItems", JSON.stringify(basketItems));
@@ -75,8 +77,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       const productPrice = event.target.getAttribute("data-price");
       const productImage = event.target.getAttribute("data-image");
       const productDescription = event.target.getAttribute("data-description");
-      const productSize =
-        event.target.parentElement.querySelector(".size-dropdown").value;
 
       let basketItems = JSON.parse(localStorage.getItem("basketItems")) || [];
 
@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         price: productPrice,
         image: productImage,
         description: productDescription,
-        size: productSize,
       });
 
       localStorage.setItem("basketItems", JSON.stringify(basketItems));
@@ -109,6 +108,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       updateBasketView();
     }
   });
+
+  //API FETCH JS
 
   try {
     const spinnerContainer = document.getElementById("spinner-container");
@@ -141,17 +142,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <h4>${product.title}</h4>
                 <p>${product.description || "Description not available"}</p>
                 <p>$${product.price}</p>
-                
               </div>
               <div class="button-container">
-              <div>
-                  <label for="size">Size:</label>
-                  <select class="size-dropdown" name="size">
-                    ${product.sizes
-                      .map((size) => `<option value="${size}">${size}</option>`)
-                      .join("")}
-                  </select>
-                </div>
                 <button class="add-to-basket" data-id="${
                   product.id
                 }" data-name="${product.title}" data-price="${
@@ -182,6 +174,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.error("Error fetching product data:", error);
   }
 
+  // PRODUCT PAGE JS
+
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
 
@@ -204,18 +198,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         productImage.src = product.image?.url || "";
         productImage.alt = product.title;
 
-        const sizeDropdown = document.getElementById("size-dropdown");
-        product.sizes.forEach((size) => {
-          const option = document.createElement("option");
-          option.value = size;
-          option.textContent = size;
-          sizeDropdown.appendChild(option);
-        });
-
         const addToCartButton = document.getElementById("add-to-cart");
         addToCartButton.addEventListener("click", () => {
-          const selectedSize = sizeDropdown.value;
-          addToBasket({ ...product, size: selectedSize });
+          addToBasket(product);
         });
       } else {
         console.error("Product not found with ID:", productId);
